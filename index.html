@@ -20,6 +20,14 @@
         line-height: 2rem;
     }
 
+
+    input {
+        border: 1px solid bisque;
+        text-align: center;
+        padding: 1%;
+        border-radius: 20px;
+    }
+
     button {
         border: none;
         background-color: wheat;
@@ -34,33 +42,38 @@
 <body>
     <h1>Pet's ID</h1>
     <form>
-        <div class="pet">
+        <div class="petBox">
             <label for="petName">Pet's Name</label>
             <input id="petName" type="text" placeholder="Enter the pet's name"/>
         </div>
-        <div class="owner">
+        <div class="ownerBox">
             <label for="owner">Owner's Name</label>
             <input id="owner" type="text" placeholder="Enter the owner's name" />
         </div>
-        <fieldset class=" species">
+        <!-- <fieldset class=" species">
             <legend for="species">Species</legend>
             <input id="dog" type="radio" name="species" value="dog" />
-            <label for="dog" checked>Dog</label>
+            <label for="dog">Dog</label>
             <input id="cat" type="radio" name="species" value="cat" />
             <label for="cat">Cat</label>
             <input id="rabbit" type="radio" name="species" value="rabbit"/>
             <label for="rabbit">Rabbit</label>
             <input id="other" type="radio" name="species" value="other" />
             <label for="other">Other</label>
-        </fieldset>
-        <div class="breed">
+        </fieldset>-->
+        <div class="speciesBox">
+            <label for="breed">Species</label>
+            <input id="species" type="text" placeholder="Enter the species of the pet" />
+        </div>
+        <div class="breedBox">
             <label for="breed">Breed</label>
             <input id="breed" type="text" placeholder="Enter the breed of the pet" />
         </div>
-        <div class="btn">
-            <button type="submit"> Send </button>
+        <div>
+            <button id="btn" type="submit"> Send </button>
         </div>
     </form>
+    <ul id="petList"></ul>
 </body>
 <script src="./scriptForm.js">
 </script>
