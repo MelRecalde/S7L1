@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet ID form</title>
+</head>
+<style>
+    body {
+        background-color: beige;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    form {
+        border: 3px solid burlywood;
+        padding: 2%;
+        text-align: center;
+        width: 50%;
+        line-height: 2rem;
+    }
+
+    button {
+        border: none;
+        background-color: wheat;
+        border-radius: 20px;
+        margin-top: 3%;
+        font-size: large;
+        padding: 0.5rem;
+    }
+
+</style>
+
+<body>
+    <h1>Pet's ID</h1>
+    <form>
+        <div class="pet">
+            <label for="petName">Pet's Name</label>
+            <input id="petName" type="text" placeholder="Enter the pet's name"/>
+        </div>
+        <div class="owner">
+            <label for="owner">Owner's Name</label>
+            <input id="owner" type="text" placeholder="Enter the owner's name" />
+        </div>
+        <fieldset class=" species">
+            <legend for="species">Species</legend>
+            <input id="dog" type="radio" name="species" value="dog" />
+            <label for="dog" checked>Dog</label>
+            <input id="cat" type="radio" name="species" value="cat" />
+            <label for="cat">Cat</label>
+            <input id="rabbit" type="radio" name="species" value="rabbit"/>
+            <label for="rabbit">Rabbit</label>
+            <input id="other" type="radio" name="species" value="other" />
+            <label for="other">Other</label>
+        </fieldset>
+        <div class="breed">
+            <label for="breed">Breed</label>
+            <input id="breed" type="text" placeholder="Enter the breed of the pet" />
+        </div>
+        <div class="btn">
+            <button type="submit"> Send </button>
+        </div>
+    </form>
+</body>
+<script>
+    const form = document.querySelector("form")
+
+form.onsubmit = function (e) {
+    e.preventDefault()
+    form.reset()
+}
+</script>
+
+</html>
