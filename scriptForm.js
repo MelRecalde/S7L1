@@ -16,52 +16,52 @@ let speciesCat = document.getElementById('cat')
 let speciesRabbit = document.getElementById('rabbit')
 let speciesOthers = document.getElementById('other')
 */
-let sendButton = document.getElementById('btn')
+
 let petList = document.getElementById('petList')
 
 let pets = []
 
 class Pet {
-    constructor(petName, ownerName, species, breed) {
-        this.petName = petName;
-        this.ownerName = ownerName;
-        this.species = species;
-        this.breed = breed;
+  constructor(petName, ownerName, species, breed) {
+    this.petName = petName;
+    this.ownerName = ownerName;
+    this.species = species;
+    this.breed = breed;
+  }
+  checkOwner(otherPet) {
+    if (this.ownerName === otherPet.ownerName) {
+      return `${this.petName} and ${otherPet.petName} have the same owner`
+    } else {
+      return false
     }
-    checkOwner(otherPet) {
-        if (this.ownerName === otherPet.ownerName) {
-            return `${this.petName} and ${otherPet.petName} have the same owner`
-        } else {
-            return false
-        }
-    }
+  }
 }
 
 
 const addList = function () {
-    petList.innerHTML = ''
-    pets.forEach((pet) => {
-      const newList = document.createElement('li')
-      newList.innerText =
-        'PET NAME: ' + pet.petName + ', OWNER: ' + pet.ownerName
-      petList.appendChild(newList)
-    })
-  }
+  petList.innerHTML = ''
+  pets.forEach((pet) => {
+    const newList = document.createElement('li')
+    newList.innerText =
+      'PET NAME: ' + pet.petName + ', OWNER: ' + pet.ownerName
+    petList.appendChild(newList)
+  })
+}
 
-  sendButton.onclick = function () {
-    let newPet = new Pet(
-      petNameField.value,
-      ownerNameField.value,
-      speciesField.value,
-      breedField.value
-    )
-    
-    pets.push(newPet)
+let sendButton = document.getElementById('btn')
+sendButton.onclick = function () {
+  let newPet = new Pet(
+    petNameField.value,
+    ownerNameField.value,
+    speciesField.value,
+    breedField.value
+  )
 
-    renderList()
-    petNameField.value = '' 
-    ownerNameField.value = '' 
-    breedField.value = '' 
-  }
-  
-  
+  pets.push(newPet)
+
+  renderList()
+  petNameField.value = ''
+  ownerNameField.value = ''
+  breedField.value = ''
+}
+
